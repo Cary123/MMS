@@ -1,0 +1,9 @@
+C:\Users\21919\Desktop\dotnet\Message\bin\Debug\netcoreapp1.1\Message.deps.json
+C:\Users\21919\Desktop\dotnet\Message\bin\Debug\netcoreapp1.1\Message.runtimeconfig.json
+C:\Users\21919\Desktop\dotnet\Message\bin\Debug\netcoreapp1.1\Message.runtimeconfig.dev.json
+C:\Users\21919\Desktop\dotnet\Message\bin\Debug\netcoreapp1.1\Message.dll
+C:\Users\21919\Desktop\dotnet\Message\bin\Debug\netcoreapp1.1\Message.pdb
+C:\Users\21919\Desktop\dotnet\Message\obj\Debug\netcoreapp1.1\Message.AssemblyInfo.cs
+C:\Users\21919\Desktop\dotnet\Message\obj\Debug\netcoreapp1.1\Message.dll
+C:\Users\21919\Desktop\dotnet\Message\obj\Debug\netcoreapp1.1\Message.pdb
+C:\Users\21919\Desktop\dotnet\Message\obj\Debug\netcoreapp1.1\Message.csprojResolveAssemblyReference.cache
