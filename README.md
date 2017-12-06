@@ -1,0 +1,2 @@
+# MMS
+Microservice Email Service
