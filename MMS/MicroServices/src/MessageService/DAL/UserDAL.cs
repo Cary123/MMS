@@ -1,7 +1,7 @@
 using MongoDB.Driver;
 using MongoDB.Bson;
 using MongoDB.Driver.Core;
-using MMS.Models;
+using MMS.Micro.MessageService.Models;
 
 namespace MMS.Micro.MessageService.DAL
 {
