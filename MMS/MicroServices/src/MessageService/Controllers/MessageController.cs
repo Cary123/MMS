@@ -47,6 +47,12 @@ namespace MMS.Micro.MessageService.Controllers
             return Json("111");
         }
 
+        [HttpPost]
+        public IActionResult Post([FromBody] MessageConfiguration msgCfg)
+        {
+            return null;
+        }
+
         // PUT api/message/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
