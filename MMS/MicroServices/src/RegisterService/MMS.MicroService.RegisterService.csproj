@@ -18,4 +18,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Platform\MMS.Platform.csproj" />
+  </ItemGroup>
+
 </Project>

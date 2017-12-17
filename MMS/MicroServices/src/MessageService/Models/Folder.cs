@@ -1,7 +1,7 @@
 using System;
 using System.Collections.ObjectModel;
 
-namespace MMS.Micro.MessageService.Models
+namespace MMS.MicroService.MessageService.Models
 {
     public class Folder
     {

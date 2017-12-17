@@ -2,16 +2,26 @@ using System;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using MongoDB.Driver.Core;
-using MMS.Micro.MessageService.Models;
+using MMS.MicroService.MessageService.Models;
 using System.Collections.ObjectModel;
-namespace MMS.Micro.MessageService.DAL
+using MMS.Platform.MongoDB;
+
+namespace MMS.MicroService.MessageService.DAL
 {
     public class MessageDAL
     {
-        public static void AddMessage(Message message)
+        private MongoDBManager mongoDBManager = new MongoDBManager();
+
+        public MessageDAL()
         {
-            var client = new MongoClient("mongodb://localhost:27017");
-            var database = client.GetDatabase("message");
+
+        }
+
+        public void AddMessage( Message message)
+        {
+            //var client = new MongoClient("mongodb://localhost:27017");
+            //var database = client.GetDatabase("message");
+            IMongoDatabase database = mongoDBManager.GetMongoDatabase();
             var collection = database.GetCollection<BsonDocument>("message");
             var filter = new BsonDocument();
             var list = collection.Find(filter).ToList();
@@ -22,7 +32,7 @@ namespace MMS.Micro.MessageService.DAL
             }
         }
 
-        public static MailBox GetMailBoxByUser(string username)
+        public MailBox GetMailBoxByUser(string username)
         {
             MailBox mailBox = new MailBox();
             var client = new MongoClient("mongodb://localhost:27017");
@@ -82,6 +92,13 @@ namespace MMS.Micro.MessageService.DAL
                     mailBox.Folders.Add(folder);
                 }
             }
+            return mailBox;
+        }
+
+        public MailBox GetMailBoxByUserAndSyncTime(string username, DateTime syncTime, long maxSyncNum)
+        {
+            MailBox mailBox = null;
+
             return mailBox;
         }
     }

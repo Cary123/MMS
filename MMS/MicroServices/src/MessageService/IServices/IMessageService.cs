@@ -1,12 +1,13 @@
-using MMS.Micro.MessageService.Models;
+using System;
+using MMS.MicroService.MessageService.Models;
 
-namespace MMS.Micro.MessageService.IServices
+namespace MMS.MicroService.MessageService.IServices
 {
     public interface IMessageService
     {
         void SendMessage(Message message);
 
-        MailBox GetMailBoxByUser(string username);
+        MailBox GetMailBoxByUserAndSynctime(string username, DateTime synctime);
 
         void DeleteMessage(Message message);
     }

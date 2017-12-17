@@ -1,8 +1,8 @@
 using System;
 using System.Collections.ObjectModel;
-using MMS.Micro.MessageService.Models;
+using MMS.MicroService.MessageService.Models;
 
-namespace MMS.Micro.MessageService.Models
+namespace MMS.MicroService.MessageService.Models
 {
     public class User
     {

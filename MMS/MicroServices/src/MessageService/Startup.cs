@@ -7,8 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MMS.Platform.MongoDB;
 
-namespace MMS
+
+namespace MMS.MicroService.MessageService
 {
     public class Startup
     {
@@ -29,6 +31,8 @@ namespace MMS
         {
             // Add framework services.
             services.AddMvc();
+            services.AddOptions();
+            services.Configure<MongoDBConfiguration>(Configuration.GetSection("MongoDBConfiguration"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,7 +40,6 @@ namespace MMS
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
             app.UseMvc();
         }
     }

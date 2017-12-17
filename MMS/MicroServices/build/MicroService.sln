@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMS.MicroService.RegisterSe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMS.MicroService.LoginService", "..\src\LoginService\MMS.MicroService.LoginService.csproj", "{33067960-E313-4937-8C31-21A98055D5C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform", "..\..\Common\Platform\Platform.csproj", "{5941ED1B-EFDF-435C-B812-1165AC811538}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMS.Platform", "..\..\Common\Platform\MMS.Platform.csproj", "{83AA2CF4-E2E8-4B26-B826-5B04B0052E74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{33067960-E313-4937-8C31-21A98055D5C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33067960-E313-4937-8C31-21A98055D5C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33067960-E313-4937-8C31-21A98055D5C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5941ED1B-EFDF-435C-B812-1165AC811538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5941ED1B-EFDF-435C-B812-1165AC811538}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5941ED1B-EFDF-435C-B812-1165AC811538}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5941ED1B-EFDF-435C-B812-1165AC811538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83AA2CF4-E2E8-4B26-B826-5B04B0052E74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83AA2CF4-E2E8-4B26-B826-5B04B0052E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83AA2CF4-E2E8-4B26-B826-5B04B0052E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83AA2CF4-E2E8-4B26-B826-5B04B0052E74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

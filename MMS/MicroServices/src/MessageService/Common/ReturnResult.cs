@@ -1,5 +1,5 @@
 using System;
-namespace MMS.Micro.MessageService.Common
+namespace MMS.MicroService.MessageService.Common
 {
     public class ReturnResult
     {

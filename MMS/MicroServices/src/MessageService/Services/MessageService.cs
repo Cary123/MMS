@@ -1,10 +1,25 @@
-using MMS.Micro.MessageService.Models;
-using MMS.Micro.MessageService.IServices;
-using MMS.Micro.MessageService.DAL;
-namespace MMS.Micro.MessageService.Services
+using System;
+using MMS.MicroService.MessageService.Models;
+using MMS.MicroService.MessageService.IServices;
+using MMS.MicroService.MessageService.DAL;
+using MMS.MicroService.MessageService.Handler;
+
+namespace MMS.MicroService.MessageService.Services
 {
     public class MessageService : IMessageService
     {
+        private MessageHandler messageHandler;
+
+        public MessageService()
+        {
+            this.messageHandler = new MessageHandler();
+        }
+
+        public MessageService(MessageHandler messageHandler)
+        {
+            this.messageHandler = messageHandler;
+        }
+
         public void SetConfiguration(MessageConfiguration cfg)
         {
 
@@ -20,9 +35,9 @@ namespace MMS.Micro.MessageService.Services
             return null;
         }
 
-        public MailBox GetMailBoxByUser(string username)
+        public MailBox GetMailBoxByUserAndSynctime(string username, DateTime synctime)
         {
-           return MessageDAL.GetMailBoxByUser(username);
+           return messageHandler.GetMailBoxByUserAndSynctime(username, synctime);
         }
 
         public void DeleteMessage(Message message)

@@ -1,6 +1,6 @@
-using MMS.Micro.MessageService.Models;
+using MMS.MicroService.MessageService.Models;
 
-namespace MMS.Micro.MessageService.IServices
+namespace MMS.MicroService.MessageService.IServices
 {
     public interface IRegisterService
     {

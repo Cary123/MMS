@@ -1,4 +1,5 @@
-namespace MMS.Micro.MessageService.Models
+using System;
+namespace MMS.MicroService.MessageService.Models
 {
     public enum SessionState
     {

@@ -1,11 +1,11 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
-using MMS.Micro.MessageService.Models;
-using MMS.Micro.MessageService.Common;
-using MicroMessageService = MMS.Micro.MessageService.Services.MessageService;
-namespace MMS.Micro.MessageService.Controllers
+using MMS.MicroService.MessageService.Models;
+using MMS.MicroService.MessageService.Common;
+using MicroMessageService = MMS.MicroService.MessageService.Services.MessageService;
+namespace MMS.MicroService.MessageService.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("mms/[controller]")]
     public class MessageController : Controller
     {
         
@@ -17,14 +17,14 @@ namespace MMS.Micro.MessageService.Controllers
         }
 
         // GET api/message/5
-        [HttpGet("{username}")]
-        public IActionResult Get(string username)
+        [HttpGet("{username}/{synctime}")]
+        public IActionResult Get(string username, DateTime synctime)
         {
             ReturnResult result = new ReturnResult();
             MailBox mailBox = null;
             try
             {
-                mailBox = new MicroMessageService().GetMailBoxByUser(username);
+                mailBox = new MicroMessageService().GetMailBoxByUserAndSynctime(username,synctime);
                 result.ResultCode = 1;
                 result.Content = mailBox;
             }

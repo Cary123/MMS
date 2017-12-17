@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using StackExchange.Redis;
 
-namespace Platform.Redis
+namespace MMS.Platform.Redis
 {
     public class RedisManager
     {

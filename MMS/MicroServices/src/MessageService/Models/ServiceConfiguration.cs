@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MMS.Micro.MessageService.Models
+namespace MMS.MicroService.MessageService.Models
 {
     public class ServiceConfiguration
     {
