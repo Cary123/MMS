@@ -31,13 +31,14 @@ namespace MMS.MicroService.MessageService
         {
             // Add framework services.
             services.AddMvc();
-            services.AddOptions();
-            services.Configure<MongoDBConfiguration>(Configuration.GetSection("MongoDBConfiguration"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            MongoDBConfiguration mongoDBCfg = new MongoDBConfiguration();
+            Configuration.GetSection("MongoDBConfiguration").Bind(mongoDBCfg);
+
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
             app.UseMvc();

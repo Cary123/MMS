@@ -5,6 +5,6 @@ namespace MMS.Platform
 {
     public interface IOAMAdapter
     {
-        void StarUpOAM(MongoDBConfiguration cfg);
+        void StarUpOAM(Object obj);
     }
 }

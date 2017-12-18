@@ -8,11 +8,15 @@ namespace MMS.Platform.MongoDB
 {
     public class MongoDBOAMAdapter : IOAMAdapter
     {
-        public void StarUpOAM(MongoDBConfiguration cfg)
+        public void StarUpOAM(Object obj)
         {
-            if (cfg != null)
+            if (obj != null)
             {
-                MongoDBManager.SetMongoDBConfig(cfg);
+                MongoDBConfiguration cfg = obj as MongoDBConfiguration;
+                if (cfg != null)
+                {
+                    MongoDBManager.SetMongoDBConfig(cfg);
+                }
             }
         }
     }
