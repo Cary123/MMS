@@ -12,11 +12,15 @@ namespace MMS.Platform.MongoDB
     {
         private static MongoDBConfiguration cfg;
 
+        private static IMongoDatabase db;
+
         private static string connectionString;
 
         private static string databaseName;
 
         private static string ConnectionStringTemplate = "mongodb://<username>:<password>@<servername>";
+
+        private static Object lockObj = new object(); 
 
         public static void SetMongoDBConfig(MongoDBConfiguration configuration)
         {
@@ -74,27 +78,34 @@ namespace MMS.Platform.MongoDB
         /// </summary>
         /// <param name="txn">The handle to a transaction object. (optional)</param>
         /// <returns></returns>
-        public IMongoDatabase GetMongoDatabase()
+        public static IMongoDatabase GetMongoDatabase()
         {
-            IMongoDatabase database = null;
-            if (string.IsNullOrWhiteSpace(connectionString))
-                UpdateConnectionString();
-
-            if (!string.IsNullOrWhiteSpace(connectionString))
+            if (db == null)
             {
-                IMongoClient client = new MongoClient(connectionString);
+                lock (lockObj)
+                {
+                    if (db == null)
+                    {
+                        if (string.IsNullOrWhiteSpace(connectionString))
+                            UpdateConnectionString();
 
-                if (string.IsNullOrWhiteSpace(databaseName))
-                    throw new Exception("No database specified");
+                        if (!string.IsNullOrWhiteSpace(connectionString))
+                        {
+                            IMongoClient client = new MongoClient(connectionString);
 
-                database = client.GetDatabase(databaseName);
+                            if (string.IsNullOrWhiteSpace(databaseName))
+                                throw new Exception("No database specified");
+
+                            db = client.GetDatabase(databaseName);
+                        }
+                        else
+                        {
+                            throw new Exception("Can not connect to MongoDB with empty connection string");
+                        }
+                    }
+                }
             }
-            else
-            {
-                throw new Exception("Can not connect to MongoDB with empty connection string");
-            }
-
-            return database;
+            return db;
         }
 
     }

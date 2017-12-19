@@ -12,6 +12,7 @@ namespace MMS.MicroService.MessageService.Services
         public void Listen(object state)
         {
             IDatabase db = RedisManager.GetDatabase();
+            db.
         }
     }
 }

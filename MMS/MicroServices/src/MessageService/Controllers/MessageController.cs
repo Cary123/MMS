@@ -17,8 +17,8 @@ namespace MMS.MicroService.MessageService.Controllers
         }
 
         // GET api/message/5
-        [HttpGet("{username}/{synctime}")]
-        public IActionResult Get(string username, DateTime synctime)
+        [HttpGet("v1/{username}/{synctime}")]
+        public IActionResult SyncMessageByUserAndTime(string username, DateTime synctime)
         {
             ReturnResult result = new ReturnResult();
             MailBox mailBox = null;
