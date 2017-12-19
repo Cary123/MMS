@@ -8,7 +8,14 @@ namespace MMS.Platform.Redis
     {
         public void StarUpOAM(object obj)
         {
-            throw new NotImplementedException();
+            if (obj != null)
+            {
+                RedisConfiguration cfg = obj as RedisConfiguration;
+                if (cfg != null)
+                {
+                    RedisManager.SetRedisConfig(cfg);
+                }
+            }
         }
     }
 }
